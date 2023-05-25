@@ -1,0 +1,14 @@
+{% extends "Osnovn/index.html" %}
+{% load static %}
+{% block content %}
+<div id="qweqweqweqweqwe">
+<!-- перечисление и вывод последних 3 постов -->
+{% for i in posts %}
+    <p> {{ i.id }} </p>
+    <p> {{ i.name }} </p>
+    <p> {{ i.textPost }} </p>
+    <p> {{ i.date }} </p>
+{% endfor %}
+
+</div>
+{% endblock %}

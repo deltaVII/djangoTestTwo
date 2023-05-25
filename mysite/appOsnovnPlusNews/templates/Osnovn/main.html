@@ -1,0 +1,16 @@
+{% extends "Osnovn/index.html" %}
+
+{% block content %}
+
+<!-- также перечисляет и выводит последние 3 поста, НО добавленны основные ссылки -->
+
+{% for i in posts %}
+<p> {{ i.id }} </p>
+<p> {{ i.name }} </p>
+<p> {{ i.date }} </p>
+<a href="http://127.0.0.1:8000/posts/{{ i.id }}">DU</a>
+{% endfor %}
+<p></p>
+<a href="http://127.0.0.1:8000/post">post</a>
+<a href="http://127.0.0.1:8000/form">form</a>
+{% endblock %}

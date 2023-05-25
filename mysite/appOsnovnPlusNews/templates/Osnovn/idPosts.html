@@ -1,0 +1,14 @@
+{% extends "Osnovn/index.html" %}
+{% load static %}
+{% block content %}
+<!-- динамическая страница постов -->
+<div id="qweqweqweqweqwe">
+{% for i in data %}
+    <p> {{ i.id }} </p>
+    <p> {{ i.name }} </p>
+    <p> {{ i.textPost }} </p>
+    <p> {{ i.date }} </p>
+{% endfor %}
+
+</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+<!-- шаблон для страниц -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ShavalievGroup</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href= "{% static "main.css" %}">
+    </head>
+    <body>
+        <style></style>
+        <div id="root">
+            <header>
+
+            </header>
+            <main id="main">
+
+                {% block content %}
+	            {% endblock %}
+
+            <footer>
+                <a href="http://127.0.0.1:8000/main">main</a>
+            </footer>
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,59 @@
+<!-- база -->
+{% extends "Osnovn/index.html" %}
+{% load static %}
+{% block content %}
+
+<!-- проверка на аунтетификацию -->
+
+{% if user.is_authenticated %}
+
+<li>User: {{ user.get_username }}</li>
+
+<li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
+
+<form action="/form" method="post" id="form">
+<!-- форма создания постов -->
+    {% csrf_token %}
+
+    <label for="ame">Your name: </label>
+    <input id="name" type="text" name="name" value="{{ name }}" required>
+
+    <label for="company_index">Your post: </label>
+    <input id="post" type="text" name="post" value="{{ post }}" height="400px" required>
+
+    <input type="submit" value="Submit" id="button">
+
+</form>
+
+{% else %}
+
+<li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
+
+{% endif %}
+
+<style>
+    form {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+</style>
+<!-- раньше при пустых ячейках ввода давало ошибку, пытался так исправить -->
+<!--
+<script>
+
+    let form = document.getElementById('form');
+    let but = document.getElementById('button');
+    function Proverka() {
+        if (document.getElementById('empt').value == '' || document.getElementById('age').value == '' || document.getElementById('name').value == '') {
+            alert('Ты это, того самого. Форму не заполнил...')
+    }
+        else{
+            form.submit();
+        }
+    }
+    console.log(form)
+    but.addEventListener("click", () => {Proverka()})
+</script>
+-->
+{% endblock %}
