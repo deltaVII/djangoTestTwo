@@ -46,7 +46,10 @@ def form(request):
         
 # страницы с динамическим URL с постами
 def idPosts(request, post_id):
+    
     data = {
-        'data': Posts.objects.order_by('id')[post_id-1:post_id]
+        'data': Posts.objects.order_by('id')[post_id-1:post_id],
+        'chairts': Posts.objects.get(id = post_id).chairts.split("'"),
+        'image': Posts.objects.get(id = post_id).image.split()
     }
     return render(request, 'Osnovn/idPosts.html', data)

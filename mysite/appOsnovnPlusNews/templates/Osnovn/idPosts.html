@@ -2,11 +2,19 @@
 {% load static %}
 {% block content %}
 <!-- динамическая страница постов -->
+
 <div id="qweqweqweqweqwe">
 {% for i in data %}
+
     <p> {{ i.id }} </p>
     <p> {{ i.name }} </p>
+    {% for j in image %}
+        <img src="/static/{{ j }}" alt={{ j }}>
+    {% endfor %}
     <p> {{ i.textPost }} </p>
+    {% for j in chairts %}
+        <p> {{ j }} </p>
+    {% endfor %}
     <p> {{ i.date }} </p>
 {% endfor %}
 
